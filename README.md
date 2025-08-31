@@ -54,7 +54,7 @@ Você pode visualizar direto na web pelo link ao lado: <a href="https://deveverl
 
 1. Clone este repositório:  
    ```bash
-   git clone https://github.com/seu-usuario/LojaVirtualCop30.git
+   git clone https://github.com/deveverllon/LojaVirtualCop30.git
 
 ---
 

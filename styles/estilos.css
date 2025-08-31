@@ -1,0 +1,400 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* IMPORTAÇÃO DE FONT Merriweather e Poppins */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --color-fundo: #fcfff7;
+  --cor-texto-black: #333;
+  --cor-texto-white: #f8f8f8;
+  --cor-borda: #ddd;
+  --cor-footer: #f9f9f9;
+
+  --cor-primaria: #228b22;
+  /* Verde Floresta */
+  --cor-secundaria: #dd8c00;
+  /* Verde Escuro Amazônico */
+  --cor-terciaria: #8fbc8f;
+  /* Verde Claro Folhagem */
+
+  --font-princioal: "Poppins", sans-serif;
+  --font-destaque: "Merriweather", serif;
+}
+
+body {
+  background-color: var(--color-fundo);
+}
+
+/* ---------------------------------- */
+/* Estilo básico para o seletor de idioma */
+.container_seletor-idioma {
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-white);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  padding: 10px 16px;
+
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  border-radius: 24px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.container_seletor-idioma:hover {
+  transition: transform 3s;
+  background-color: #228b2268;
+}
+
+.container_seletor-idioma select {
+  font-size: 1em;
+  padding: 5px 8px;
+  background-color: transparent;
+  color: var(--cor-texto-white);
+  width: 138px;
+  transition: border-color 0.2s;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.container_seletor-idioma option {
+  background-color: var(--color-fundo);
+  color: var(--cor-texto-black);
+}
+
+/* RESPONSIVIDADE DA SEÇÃO DE IDIOMA NO TOPO DO SITE */
+@media (max-width: 600px) {
+  .container_seletor-idioma {
+    position: static; /* Evita sobreposição em telas pequenas */
+    justify-content: center;
+    gap: 8px;
+    padding: 7px 8px;
+    border-radius: 0px;
+    width: 100%;
+  }
+
+  .container_seletor-idioma select {
+    width: 150px;
+    font-size: 0.95em;
+    padding: 4px 6px;
+  }
+}
+
+/* ---------------------------------- */
+/* HEADER */
+header {
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  color: #fff;
+
+  /* IMAGE DE FUNDO */
+  background: url("../images/image-fundo-header.jpg") no-repeat center
+    center/cover;
+  background-attachment: fixed;
+}
+
+h1 {
+  font-family: var(--font-destaque);
+  font-size: 4.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.paragrafo-header {
+  font-size: 1.2em;
+  max-width: 600px;
+  text-align: center;
+  line-height: 1.6;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.container_idioma-bandeiras {
+  display: flex;
+  gap: 15px;
+  background-color: var(--color-fundo);
+  padding: 8px 25px;
+  border-radius: 12px;
+  border: 2px solid var(--cor-borda);
+}
+
+.container_idioma-bandeiras a {
+  transition: transform 0.3s;
+}
+
+.container_idioma-bandeiras a:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 934px) {
+  header {
+    /* height: auto; */
+    padding: 40px 20px;
+  }
+
+  h1 {
+    font-size: 3em;
+    text-align: center;
+  }
+
+  .paragrafo-header {
+    font-size: 1em;
+  }
+
+  .container_idioma-bandeiras {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card-produto {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* ---------------------------------- */
+/* main */
+/* MAIN - Melhorias e Responsividade */
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px; /* Adicionado padding para espaçamento lateral em telas pequenas */
+}
+
+.destaque {
+  width: 100%;
+}
+
+h2 {
+  font-family: var(--font-destaque);
+  font-size: 2.5em;
+  text-align: center;
+  margin: 22px 0px;
+}
+
+section > p {
+  text-align: center;
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-white);
+  font-size: 1.5em;
+  margin: 18px 0px 0px 0px;
+  border-radius: 8px;
+  padding: 10px 8px; /* Adicionado padding para melhor visualização */
+}
+
+/* Estilo para os cards de produto */
+.produtos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 35px;
+}
+
+.card-produto {
+  flex: 1 1 320px; /* Reduzido tamanho base para melhor responsividade */
+  max-width: 380px;
+  min-width: 260px; /* Adicionado min-width para evitar cards muito pequenos */
+  background-color: var(--color-fundo);
+  border: 3px solid var(--cor-borda);
+  border-radius: 18px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+
+.card-produto:hover {
+  box-shadow: 0 4px 16px rgba(34, 139, 34, 0.15); /* Sombra ao passar mouse */
+}
+
+.card-produto img {
+  width: 100%;
+  height: 180px; /* Aumentado para melhor destaque visual */
+  object-fit: cover;
+  transition: transform 0.3s;
+  margin-bottom: 15px;
+  border-radius: 18px 18px 0 0; /* Bordas arredondadas no topo */
+}
+
+.card-produto img:hover {
+  transform: scale(1.07); /* Efeito hover mais sutil */
+}
+
+.card-produto div {
+  padding: 0 16px 16px 16px; /* Padding aumentado */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Gap aumentado */
+}
+
+.card-produto div h3 {
+  font-family: var(--font-destaque);
+  font-size: 1.25em;
+  font-weight: 900;
+  color: var(--cor-secundaria);
+  margin-bottom: 4px;
+}
+
+.card-produto div p {
+  font-size: 1em; /* Levemente maior para melhor leitura */
+  color: var(--cor-texto-black);
+  line-height: 1.5em;
+}
+
+.card-produto div p strong {
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-white);
+  padding: 4px 10px;
+  border-radius: 8px;
+  position: relative;
+  left: 70%; /* Ajustado para melhor responsividade */
+  font-size: 0.95em;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+  .produtos {
+    gap: 18px;
+    justify-content: center;
+  }
+  .card-produto {
+    flex: 1 1 260px;
+    max-width: 320px;
+  }
+  .card-produto img {
+    height: 140px;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 12px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    margin: 14px 0px;
+  }
+
+  section > p {
+    font-size: 1.1em;
+    padding: 7px 4px;
+  }
+
+  .produtos {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .card-produto {
+    max-width: 98vw;
+    min-width: 0;
+    border-radius: 12px;
+  }
+
+  .card-produto img {
+    height: 110px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .card-produto div {
+    padding: 0 8px 10px 8px;
+    gap: 6px;
+  }
+
+  .card-produto div h3 {
+    font-size: 1em;
+  }
+  .card-produto div p strong {
+    left: 0;
+    display: block;
+    margin: -1px 0 0 auto;
+    width: fit-content;
+  }
+}
+
+/* ---------------------- */
+/* Footer */
+footer {
+  background-color: var(--cor-footer);
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 18px 12px; */
+  height: 100vh;
+}
+
+footer p {
+  margin: 4px 0;
+  font-size: 1em;
+  color: var(--cor-texto-black);
+  text-align: center;
+  word-break: break-word;
+}
+
+footer p a {
+  color: var(--cor-secundaria);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s, text-decoration 0.2s;
+  border-bottom: 2px solid transparent;
+}
+
+footer p a:hover {
+  color: var(--cor-primaria);
+  border-bottom: 2px solid var(--cor-secundaria);
+}
+
+iframe {
+  margin-top: 20px;
+  max-width: 100%;
+  width: 100%;
+  height: 420px;
+  /* border-radius: 8px; */
+  border: none;
+}
+
+footer span {
+  text-align: center;
+  width: 100%;
+  font-size: 0.95em;
+  word-break: break-word;
+}
+
+/* Responsividade do footer */
+@media (max-width: 600px) {
+  footer {
+    padding: 10px 4px;
+  }
+  footer p {
+    font-size: 0.95em;
+    padding: 0 2px;
+  }
+  footer span {
+    font-size: 0.85em;
+    padding: 0 2px;
+  }
+  iframe {
+    height: 480px;
+  }
+}

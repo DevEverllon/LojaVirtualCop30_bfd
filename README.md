@@ -48,6 +48,16 @@ Projeto desenvolvido por:
 
 ---
 
+## 💻 Como visualizar
+
+Você pode visualizar direto na web pelo link ao lado: <a href="https://deveverllon.github.io/LojaVirtualCop30_bfd/" target="_blanck">[Preview]</a>
+
+1. Clone este repositório:  
+   ```bash
+   git clone https://github.com/seu-usuario/LojaVirtualCop30.git
+
+---
+
 ## 📜 Licença
 
 Este projeto está sob a licença [MIT License](./LICENSE).  
